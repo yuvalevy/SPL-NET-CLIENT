@@ -1,6 +1,6 @@
 #include "BCastPacket.h"
 
-BCastPacket::BCastPacket(string file, char add) :TFTPPacket(9), fileName(file), added(add)
+BCastPacket::BCastPacket(string file, char add) :TFTPPacket(9), added(add),fileName(file)
 {}
 
 string BCastPacket::getFileName()

@@ -39,6 +39,7 @@ public:
 	CommandLineListener& operator=(const CommandLineListener& other);
 	CommandLineListener(ClientState*, ConnectionHandler*);
 	void run();
+	~CommandLineListener();
 };
 
 #endif

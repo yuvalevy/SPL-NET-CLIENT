@@ -1,7 +1,7 @@
 #include "MessageEncoderDecoder.h"
 
 
-MessageEncoderDecoder::MessageEncoderDecoder():opCode(-1),packet(vector<byte>()),opCodeBytes(new byte[2]),opCodeSize(0),state(),encodedPacketSize(0)
+MessageEncoderDecoder::MessageEncoderDecoder() :packet(vector<byte>()), opCodeBytes(new byte[2]), opCodeSize(0), opCode(-1), state(), encodedPacketSize(0)
 {
 }
 
@@ -196,7 +196,11 @@ byte* MessageEncoderDecoder::encodeBCast(TFTPPacket* pckt) {
 	return bytes;
 }
 
-MessageEncoderDecoder::MessageEncoderDecoder(const MessageEncoderDecoder & other):opCode(-1), packet(vector<byte>()), opCodeBytes(new byte[2]), opCodeSize(0), state(), encodedPacketSize(0)
+MessageEncoderDecoder::~MessageEncoderDecoder()
+{
+}
+
+MessageEncoderDecoder::MessageEncoderDecoder(const MessageEncoderDecoder & other):packet(vector<byte>()), opCodeBytes(new byte[2]), opCodeSize(0),opCode(-1), state(), encodedPacketSize(0)
 {
 }
 

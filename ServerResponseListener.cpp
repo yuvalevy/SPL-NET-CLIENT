@@ -1,11 +1,11 @@
 #include "ServerResponseListener.h"
 
 
-ServerResponseListener::ServerResponseListener(ClientState * state, ConnectionHandler * handler):handler(handler),clientState(state),encdec(MessageEncoderDecoder())
+ServerResponseListener::ServerResponseListener(ClientState * state, ConnectionHandler * handler) :handler(handler), clientState(state), encdec(MessageEncoderDecoder())
 {
 }
 
-ServerResponseListener::ServerResponseListener(const MessageEncoderDecoder & other) : handler(handler),clientState(), encdec(MessageEncoderDecoder())
+ServerResponseListener::ServerResponseListener(const MessageEncoderDecoder & other) : handler(handler), clientState(), encdec(MessageEncoderDecoder())
 {
 }
 
@@ -27,6 +27,10 @@ void ServerResponseListener::run()
 				handlePacket(packet);
 		}
 	}
+}
+
+ServerResponseListener::~ServerResponseListener()
+{
 }
 
 void ServerResponseListener::handlePacket(TFTPPacket* packet) 

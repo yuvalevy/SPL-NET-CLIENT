@@ -2,12 +2,12 @@
 #include <iostream>
 #include <fstream>
 
-WritePacket::WritePacket(string fileName) :TFTPPacket(2), fileName(fileName),blockNum(1),start(0),fileSize(0),fileToWrite()
+WritePacket::WritePacket(string file) :TFTPPacket(2), fileName(file), fileToWrite(), start(0), blockNum(1), fileSize(0)
 {
-	readFile(fileName);
+	readFile(file);
 }
 
-WritePacket::WritePacket(const WritePacket & other)  : TFTPPacket(2), fileName(fileName), blockNum(1), start(0), fileSize(0), fileToWrite()
+WritePacket::WritePacket(const WritePacket & other) : TFTPPacket(2), fileName(other.fileName), fileToWrite(), start(0), blockNum(1), fileSize(0)
 {
 	readFile(fileName);
 }

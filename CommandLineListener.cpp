@@ -1,7 +1,7 @@
 #include "CommandLineListener.h"
 
 
-CommandLineListener::CommandLineListener(ClientState* state,ConnectionHandler* hndlr) :clientState(state),handler(hndlr),validCommands(vector<string>()),encdec(MessageEncoderDecoder())
+CommandLineListener::CommandLineListener(ClientState* state,ConnectionHandler* hndlr) :clientState(state),handler(hndlr), encdec(MessageEncoderDecoder()),validCommands(vector<string>())
 {
 	validCommands.push_back("RRQ");
 	validCommands.push_back("WRQ");
@@ -15,7 +15,7 @@ CommandLineListener::CommandLineListener(ClientState* state,ConnectionHandler* h
 	validCommands.push_back("DISC");
 }
 
-CommandLineListener::CommandLineListener(const CommandLineListener & other) :clientState(), handler(), validCommands(vector<string>()), encdec(MessageEncoderDecoder())
+CommandLineListener::CommandLineListener(const CommandLineListener & other) :clientState(), handler(), encdec(MessageEncoderDecoder()), validCommands(vector<string>())
 {
 }
 
@@ -165,6 +165,10 @@ void CommandLineListener::run()
 		else
 			cout << "INVALID INPUT" << endl;
 	}
+}
+
+CommandLineListener::~CommandLineListener()
+{
 }
 
 bool CommandLineListener::validateParamLess(string param)
