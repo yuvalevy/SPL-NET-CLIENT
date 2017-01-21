@@ -29,6 +29,15 @@ short DataPacket::getBlockNum()
 	return blockNum;
 }
 
+DataPacket::DataPacket(const DataPacket & other) :TFTPPacket(3), blockNum(other.blockNum)
+{
+}
+
+DataPacket & DataPacket::operator=(const DataPacket & other)
+{
+	return *this;
+}
+
 DataPacket::~DataPacket()
 {
 	delete data;

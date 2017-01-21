@@ -2,9 +2,13 @@
 #include <iostream>
 #include <fstream>
 
-WritePacket::WritePacket(string fileName) :TFTPPacket(2), fileName(fileName)
+WritePacket::WritePacket(string fileName) :TFTPPacket(2), fileName(fileName),blockNum(1)
 {
-	blockNum =1;
+	readFile(fileName);
+}
+
+WritePacket::WritePacket(const WritePacket & other) :TFTPPacket(2), fileName(fileName), blockNum(1)
+{
 	readFile(fileName);
 }
 
@@ -83,4 +87,9 @@ WritePacket::~WritePacket()
 {
 	if (fileToWrite != 0)
 		delete fileToWrite;
+}
+
+WritePacket & WritePacket::operator=(const WritePacket & other)
+{
+	return *this;
 }

@@ -1,4 +1,4 @@
-﻿#include "connectionHandler.h"
+﻿#include "ConnectionHandler.h"
 #include "CommandLineListener.h"
 #include "ServerResponseListener.h"
 #include <iostream>
@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	//string host = argv[1];
 	//short port = (short)atoi(argv[2]);
 
-	string host = "10.0.0.139";
+	string host ="192.168.1.11";
 	short port = 7777;
 
 	ConnectionHandler* connectionHandler = new ConnectionHandler(host, port);

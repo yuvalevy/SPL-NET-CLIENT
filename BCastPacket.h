@@ -1,3 +1,5 @@
+#ifndef BCASTPACKET_H_
+#define BCASTPACKET_H_
 #pragma once
 #include "TFTPPacket.h"
 #include <string>
@@ -14,6 +16,9 @@ public:
 	BCastPacket(string fileName,char added);
 	string getFileName();
 	char getAdded();
+	BCastPacket(const BCastPacket& other);
+	BCastPacket& operator=(const BCastPacket& other);
 
 };
 
+#endif

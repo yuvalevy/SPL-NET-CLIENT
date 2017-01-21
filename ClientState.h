@@ -1,3 +1,5 @@
+#ifndef CLIENTSTATE_H_
+#define CLIENTSTATE_H_
 #pragma once
 #include <string>
 #include <vector>
@@ -43,5 +45,9 @@ public:
 	WritePacket* getWritePacket();
 	string getNextString();
 	void setNextBytes(const byte*,int);
+	ClientState(const ClientState& other);
+	ClientState& operator=(const ClientState& other);
+
 };
 
+#endif

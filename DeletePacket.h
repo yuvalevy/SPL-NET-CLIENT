@@ -1,3 +1,5 @@
+#ifndef DELETEPACKET_H_
+#define DELETEPACKET_H_
 #pragma once
 #include "TFTPPacket.h"
 #include <string>
@@ -14,3 +16,4 @@ public:
 	string getFileName();
 };
 
+#endif

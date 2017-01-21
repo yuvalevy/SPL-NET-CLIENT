@@ -1,3 +1,5 @@
+#ifndef ERRORPACKET_H_
+#define ERRORPACKET_H_
 #pragma once
 #include "TFTPPacket.h"
 #include <string>
@@ -17,3 +19,4 @@ public:
 	string getErrorMessage();
 };
 
+#endif

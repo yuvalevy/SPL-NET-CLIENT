@@ -1,3 +1,5 @@
+#ifndef TFTPPACKET_H_
+#define TFTPPACKET_H_
 #pragma once
 
 	class TFTPPacket
@@ -9,3 +11,4 @@
 	public:
 		 short getOpcode();
 	};
+#endif

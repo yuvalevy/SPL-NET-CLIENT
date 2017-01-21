@@ -15,6 +15,10 @@ CommandLineListener::CommandLineListener(ClientState* state,ConnectionHandler* h
 	validCommands.push_back("DISC");
 }
 
+CommandLineListener::CommandLineListener(const CommandLineListener & other) : validCommands(vector<string>())
+{
+}
+
 bool CommandLineListener::validateCommand(string command)
 {
 	size_t index = command.find_first_of(' ');
@@ -196,4 +200,11 @@ bool CommandLineListener::validateString(string param,string paramname)
 		cout << "expecting string parameter " << paramname << endl;
 
 	return !isEmpty;
+}
+
+
+
+CommandLineListener & CommandLineListener::operator=(const CommandLineListener & other)
+{
+	return *this;
 }

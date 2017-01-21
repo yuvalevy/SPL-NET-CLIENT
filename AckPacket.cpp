@@ -9,4 +9,13 @@ short AckPacket::getBlockNum()
 	return blockNumber;
 }
 
+AckPacket::AckPacket(const AckPacket & other) :TFTPPacket(4), blockNumber(other.blockNumber)
+{
+}
+
+AckPacket & AckPacket::operator=(const AckPacket & other)
+{
+	return *this;
+}
+
 

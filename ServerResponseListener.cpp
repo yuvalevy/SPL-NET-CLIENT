@@ -5,6 +5,15 @@ ServerResponseListener::ServerResponseListener(ClientState * state, ConnectionHa
 {
 }
 
+ServerResponseListener::ServerResponseListener(const MessageEncoderDecoder & other) : handler(handler), encdec(MessageEncoderDecoder())
+{
+}
+
+ServerResponseListener & ServerResponseListener::operator=(const ServerResponseListener & other)
+{
+	return *this;
+}
+
 void ServerResponseListener::run()
 {
 	char single[1];
@@ -23,7 +32,7 @@ void ServerResponseListener::run()
 void ServerResponseListener::handlePacket(TFTPPacket* packet) 
 {
 	short opCode = packet->getOpcode();
-	//cout << "got " << opCode << " packet" << endl;
+
 	switch (opCode)
 	{
 	case 3:

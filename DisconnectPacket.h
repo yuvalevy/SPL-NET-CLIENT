@@ -1,3 +1,5 @@
+#ifndef DISCONNECTPACKET_H_
+#define DISCONNECTPACKET_H_
 #pragma once
 #include "TFTPPacket.h"
 class DisconnectPacket :
@@ -6,4 +8,4 @@ class DisconnectPacket :
 public:
 	DisconnectPacket();
 };
-
+#endif

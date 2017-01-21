@@ -1,3 +1,5 @@
+#ifndef MESSAGEENCODERDECODER_H_
+#define MESSAGEENCODERDECODER_H_
 #pragma once
 #include "TFTPPacket.h"	
 #include "LoginPacket.h"
@@ -61,5 +63,10 @@ public:
 	TFTPPacket* decodeNextByte(byte nextByte);
 	byte* encode(TFTPPacket* message);
 	short getPacketSize();
+	byte * encodeBCast(TFTPPacket * pckt);
+
+	MessageEncoderDecoder(const MessageEncoderDecoder& other);
+	MessageEncoderDecoder& operator=(const MessageEncoderDecoder& other);
 };
 
+#endif

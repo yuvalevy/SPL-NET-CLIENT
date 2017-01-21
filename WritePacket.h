@@ -1,3 +1,5 @@
+#ifndef WRITEPACKET_H_
+#define WRITEPACKET_H_
 #pragma once
 #include "TFTPPacket.h"
 #include "DataPacket.h"
@@ -29,6 +31,9 @@ public:
 	int getFileSize();
 	byte* getFileToWrite();
 	~WritePacket();
+	WritePacket(const WritePacket& other);
+	WritePacket& operator=(const WritePacket& other);
 };
 
 
+#endif

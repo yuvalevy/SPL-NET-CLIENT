@@ -163,16 +163,46 @@ byte* MessageEncoderDecoder::encode(TFTPPacket* pckt) {
 		return encodeLogin(pckt);
 	case 8:
 		return encodeDelete(pckt);
+	case 9:
+		return encodeBCast(pckt);
 	case 10:
 		return encodeDisconnect(pckt);
 	}
-
+	
 	return nullptr;
 }
+
 
 short MessageEncoderDecoder::getPacketSize()
 {
 	return encodedPacketSize;
+}
+
+byte* MessageEncoderDecoder::encodeBCast(TFTPPacket* pckt) {
+
+	BCastPacket* bcastPacket = static_cast<BCastPacket*>(pckt);
+	short opCode=bcastPacket->getOpcode();
+	string fileName=bcastPacket->getFileName();
+	char added = bcastPacket->getAdded();
+	short packetSize = 4 + fileName.size();
+	this->encodedPacketSize = packetSize;
+	byte* bytes = new byte[packetSize];
+	insertShort(opCode, bytes); bytes += 2;
+	bytes[0] = added; bytes++;
+	insertString(fileName, bytes); bytes += fileName.size();
+	bytes[0] = ENDER; bytes++;
+
+	bytes -= packetSize;
+	return bytes;
+}
+
+MessageEncoderDecoder::MessageEncoderDecoder(const MessageEncoderDecoder & other) :opCode(-1), packet(vector<byte>()), opCodeBytes(new byte[2]), opCodeSize(0)
+{
+}
+
+MessageEncoderDecoder & MessageEncoderDecoder::operator=(const MessageEncoderDecoder & other)
+{
+	return *this;
 }
 
 byte* MessageEncoderDecoder::encodeLogin(TFTPPacket* pckt)

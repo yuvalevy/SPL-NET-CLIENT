@@ -1,3 +1,5 @@
+#ifndef READPACKET_H_
+#define READPACKET_H_
 #pragma once
 #include "TFTPPacket.h"
 #include <string>
@@ -15,3 +17,4 @@ public:
 	string getFileName();
 };
 
+#endif

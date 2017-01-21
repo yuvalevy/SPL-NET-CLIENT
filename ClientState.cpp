@@ -99,6 +99,15 @@ void ClientState::setNextBytes(const byte * byteArray, int size)
 	}
 }
 
+ClientState::ClientState(const ClientState & other) :isConnected(false), blockNum(-1), curState(State::RUTINE), fileName(string()), writePacket(nullptr)
+{
+}
+
+ClientState & ClientState::operator=(const ClientState & other)
+{
+	return *this;
+}
+
 void ClientState::copy(int startIndex, int endIndex, vector<byte> from, byte* toArray) {
 	int index = 0;
 	for (int i = startIndex; i < endIndex; i++)

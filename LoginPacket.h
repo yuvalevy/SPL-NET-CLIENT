@@ -1,3 +1,5 @@
+#ifndef LOGINPACKET_H_
+#define LOGINPACKET_H_
 #pragma once
 #include <string>
 #include "TFTPPacket.h"
@@ -14,3 +16,4 @@ public:
 	string getUserName();
 };
 
+#endif

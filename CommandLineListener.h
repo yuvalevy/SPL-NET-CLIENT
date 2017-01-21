@@ -1,3 +1,5 @@
+#ifndef COMMANDLINELISTENER_H_
+#define COMMANDLINELISTENER_H_
 #pragma once
 #include <string>
 #include <iostream>
@@ -33,7 +35,10 @@ private:
 	bool validateShort(string param);
 	bool validateString(string param, string paramname);
 public:
+	CommandLineListener(const CommandLineListener& other);
+	CommandLineListener& operator=(const CommandLineListener& other);
 	CommandLineListener(ClientState*, ConnectionHandler*);
 	void run();
 };
 
+#endif

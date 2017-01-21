@@ -1,3 +1,5 @@
+#ifndef ACKPACKET_H_
+#define ACKPACKET_H_
 #pragma once
 #include "TFTPPacket.h"
 class AckPacket :
@@ -9,4 +11,7 @@ private:
 public:
 	AckPacket(short blockNumber);
 	short getBlockNum();
+	AckPacket(const AckPacket& other);
+	AckPacket& operator=(const AckPacket& other);
 };
+#endif

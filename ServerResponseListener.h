@@ -1,3 +1,5 @@
+#ifndef SERVERRESPONCELISTENER_H_
+#define SERVERRESPONCELISTENER_H_
 #pragma once
 #include "ClientState.h"
 #include "ConnectionHandler.h"
@@ -33,6 +35,9 @@ private:
 
 public:
 	ServerResponseListener(ClientState*, ConnectionHandler*);
+	ServerResponseListener(const MessageEncoderDecoder& other);
+	ServerResponseListener& operator=(const ServerResponseListener& other);
 	void run();
 };
 
+#endif

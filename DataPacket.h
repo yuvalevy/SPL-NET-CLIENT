@@ -1,3 +1,5 @@
+#ifndef DATAPACKET_H_
+#define DATAPACKET_H_
 #pragma once
 #include <string>
 #include "TFTPPacket.h"
@@ -17,6 +19,9 @@ public:
 	const char* getData();
 	short getSize();
 	short getBlockNum();
+	DataPacket(const DataPacket& other);
+	DataPacket& operator=(const DataPacket& other);
 	~DataPacket();
 };
 
+#endif
