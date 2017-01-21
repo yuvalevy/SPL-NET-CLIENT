@@ -1,7 +1,7 @@
 #include "MessageEncoderDecoder.h"
 
 
-MessageEncoderDecoder::MessageEncoderDecoder() :packet(vector<byte>()), opCodeBytes(new byte[2]), opCodeSize(0), opCode(-1), state(), encodedPacketSize(0)
+MessageEncoderDecoder::MessageEncoderDecoder() :packet(vector<byte>()), opCodeBytes(new byte[2]), opCodeSize(0), opCode(-1), state(), sizeExpected(0), encodedPacketSize(0)
 {
 }
 
@@ -33,16 +33,17 @@ TFTPPacket* MessageEncoderDecoder::next(byte nextByte) {
 	case ACK:
 	{
 		packet.push_back(nextByte);
-		if (packet.size() == sizeExpected)
+		if (((int)packet.size()) == sizeExpected)
 			packetToRet = createAckPacket();
 		break;
 	}
 	case DATA:
 	{
+		int size = (int)packet.size();
 		packet.push_back(nextByte);
-		if (packet.size() == 2)
+		if (size == 2)
 			sizeExpected = 4 + BytesToShort(packet);
-		else if (packet.size() > 2 && packet.size() == sizeExpected)
+		else if (size > 2 && size == sizeExpected)
 			packetToRet = createDataPacket();
 		break;
 	}
@@ -200,7 +201,7 @@ MessageEncoderDecoder::~MessageEncoderDecoder()
 {
 }
 
-MessageEncoderDecoder::MessageEncoderDecoder(const MessageEncoderDecoder & other):packet(vector<byte>()), opCodeBytes(new byte[2]), opCodeSize(0),opCode(-1), state(), encodedPacketSize(0)
+MessageEncoderDecoder::MessageEncoderDecoder(const MessageEncoderDecoder & other):packet(vector<byte>()), opCodeBytes(new byte[2]), opCodeSize(0),opCode(-1), state(),sizeExpected(0), encodedPacketSize(0)
 {
 }
 

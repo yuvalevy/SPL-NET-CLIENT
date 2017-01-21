@@ -29,7 +29,7 @@ short DataPacket::getBlockNum()
 	return blockNum;
 }
 
-DataPacket::DataPacket(const DataPacket & other):TFTPPacket(3), blockNum(blockNum), data(), size()
+DataPacket::DataPacket(const DataPacket & other):TFTPPacket(3), blockNum(other.blockNum), data(), size()
 {
 }
 
