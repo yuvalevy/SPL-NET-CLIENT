@@ -11,6 +11,11 @@ ServerResponseListener::ServerResponseListener(const ServerResponseListener & ot
 
 ServerResponseListener & ServerResponseListener::operator=(const ServerResponseListener & other)
 {
+	if (this != &other) {
+		this->handler = other.handler;
+		this->clientState = other.clientState;
+		this->encdec = other.encdec;
+	}
 	return *this;
 }
 

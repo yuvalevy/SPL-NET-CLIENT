@@ -35,6 +35,11 @@ DataPacket::DataPacket(const DataPacket & other):TFTPPacket(3), blockNum(other.b
 
 DataPacket & DataPacket::operator=(const DataPacket & other)
 {
+	if (this != &other) {
+		this->blockNum = other.blockNum;
+		this->data = other.data;
+		this->size = other.size;
+	}
 	return *this;
 }
 

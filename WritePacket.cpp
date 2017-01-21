@@ -91,5 +91,12 @@ WritePacket::~WritePacket()
 
 WritePacket & WritePacket::operator=(const WritePacket & other)
 {
+	if (this != &other) {
+		this->blockNum = other.blockNum;
+		this->fileName = other.fileName;
+		this->fileSize = other.fileSize;
+		this->fileToWrite = other.fileToWrite;
+		this->start = other.start;
+	}
 	return *this;
 }

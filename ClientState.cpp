@@ -105,6 +105,15 @@ ClientState::ClientState(const ClientState & other) :curState(State::RUTINE), bl
 
 ClientState & ClientState::operator=(const ClientState & other)
 {
+	if (this != &other) {
+		this->curState = other.curState;
+		this->blockNum = other.blockNum;
+		this->fileName = other.fileName;
+		this->isConnected = other.isConnected;
+		this->nextString = other.nextString;
+		this->stringbytes = other.stringbytes;
+		this->writePacket = other.writePacket;
+	}
 	return *this;
 }
 

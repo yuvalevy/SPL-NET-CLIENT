@@ -208,5 +208,11 @@ bool CommandLineListener::validateString(string param,string paramname)
 
 CommandLineListener & CommandLineListener::operator=(const CommandLineListener & other)
 {
+	if (this != &other) {
+		this->clientState = other.clientState;
+		this->encdec = other.encdec;
+		this->handler = other.handler;
+		this->validCommands = other.validCommands;
+	}
 	return *this;
 }

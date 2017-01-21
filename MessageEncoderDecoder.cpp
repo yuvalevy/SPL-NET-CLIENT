@@ -206,6 +206,15 @@ MessageEncoderDecoder::MessageEncoderDecoder(const MessageEncoderDecoder & other
 
 MessageEncoderDecoder & MessageEncoderDecoder::operator=(const MessageEncoderDecoder & other)
 {
+	if (this != &other) {
+		this->encodedPacketSize = other.encodedPacketSize;
+		this->opCode = other.opCode;
+		this->opCodeBytes = other.opCodeBytes;
+		this->opCodeSize = other.opCodeSize;
+		this->packet = other.packet;
+		this->sizeExpected = other.sizeExpected;
+		this->state = other.state;
+	}
 	return *this;
 }
 
