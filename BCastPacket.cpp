@@ -14,13 +14,5 @@ char BCastPacket::getAdded()
 	return added;
 }
 
-BCastPacket::BCastPacket(const BCastPacket & other) :TFTPPacket(9), fileName(fileName), added(added)
-{
-}
-
-BCastPacket & BCastPacket::operator=(const BCastPacket & other)
-{
-	return *this;
-}
 
 

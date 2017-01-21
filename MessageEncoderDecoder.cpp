@@ -196,7 +196,7 @@ byte* MessageEncoderDecoder::encodeBCast(TFTPPacket* pckt) {
 	return bytes;
 }
 
-MessageEncoderDecoder::MessageEncoderDecoder(const MessageEncoderDecoder & other) :opCode(-1), packet(vector<byte>()), opCodeBytes(new byte[2]), opCodeSize(0)
+MessageEncoderDecoder::MessageEncoderDecoder(const MessageEncoderDecoder & other):opCode(-1), packet(vector<byte>()), opCodeBytes(new byte[2]), opCodeSize(0), state(), encodedPacketSize(0)
 {
 }
 

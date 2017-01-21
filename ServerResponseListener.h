@@ -38,6 +38,7 @@ public:
 	ServerResponseListener(const MessageEncoderDecoder& other);
 	ServerResponseListener& operator=(const ServerResponseListener& other);
 	void run();
+	~ServerResponseListener();
 };
 
 #endif

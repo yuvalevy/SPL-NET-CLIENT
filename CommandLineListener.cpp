@@ -15,7 +15,7 @@ CommandLineListener::CommandLineListener(ClientState* state,ConnectionHandler* h
 	validCommands.push_back("DISC");
 }
 
-CommandLineListener::CommandLineListener(const CommandLineListener & other) : validCommands(vector<string>())
+CommandLineListener::CommandLineListener(const CommandLineListener & other) :clientState(), handler(), validCommands(vector<string>()), encdec(MessageEncoderDecoder())
 {
 }
 

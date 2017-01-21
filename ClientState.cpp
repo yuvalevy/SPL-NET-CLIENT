@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-ClientState::ClientState():isConnected(false),blockNum(-1),curState(State::RUTINE),fileName(string()),writePacket(nullptr)
+ClientState::ClientState() :isConnected(false), blockNum(-1), curState(State::RUTINE), fileName(string()), writePacket(nullptr), nextString(vector<byte>()), stringbytes(vector<byte>())
 {
 }
 

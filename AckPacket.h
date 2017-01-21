@@ -11,7 +11,5 @@ private:
 public:
 	AckPacket(short blockNumber);
 	short getBlockNum();
-	AckPacket(const AckPacket& other);
-	AckPacket& operator=(const AckPacket& other);
 };
 #endif
