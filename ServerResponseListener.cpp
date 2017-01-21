@@ -5,20 +5,6 @@ ServerResponseListener::ServerResponseListener(ClientState * state, ConnectionHa
 {
 }
 
-ServerResponseListener::ServerResponseListener(const ServerResponseListener & other) : handler(other.handler), clientState(other.clientState), encdec(other.encdec)
-{
-}
-
-ServerResponseListener & ServerResponseListener::operator=(const ServerResponseListener & other)
-{
-	if (this != &other) {
-		this->handler = other.handler;
-		this->clientState = other.clientState;
-		this->encdec = other.encdec;
-	}
-	return *this;
-}
-
 void ServerResponseListener::run()
 {
 	char single[1];

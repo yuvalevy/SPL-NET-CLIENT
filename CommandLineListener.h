@@ -35,8 +35,6 @@ private:
 	bool validateShort(string param);
 	bool validateString(string param, string paramname);
 public:
-	CommandLineListener(const CommandLineListener& other);
-	CommandLineListener& operator=(const CommandLineListener& other);
 	CommandLineListener(ClientState*, ConnectionHandler*);
 	void run();
 	~CommandLineListener();

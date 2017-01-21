@@ -65,8 +65,6 @@ public:
 	short getPacketSize();
 	byte * encodeBCast(TFTPPacket * pckt);
 	~MessageEncoderDecoder();
-	MessageEncoderDecoder(const MessageEncoderDecoder& other);
-	MessageEncoderDecoder& operator=(const MessageEncoderDecoder& other);
 };
 
 #endif

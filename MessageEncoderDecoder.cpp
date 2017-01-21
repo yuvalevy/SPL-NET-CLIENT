@@ -200,23 +200,6 @@ MessageEncoderDecoder::~MessageEncoderDecoder()
 {
 }
 
-MessageEncoderDecoder::MessageEncoderDecoder(const MessageEncoderDecoder & other) :packet(other.packet), opCodeBytes(other.opCodeBytes), opCodeSize(other.opCodeSize), opCode(other.opCode), state(other.state), sizeExpected(other.sizeExpected), encodedPacketSize(other.encodedPacketSize)
-{
-}
-
-MessageEncoderDecoder & MessageEncoderDecoder::operator=(const MessageEncoderDecoder & other)
-{
-	if (this != &other) {
-		this->encodedPacketSize = other.encodedPacketSize;
-		this->opCode = other.opCode;
-		this->opCodeBytes = other.opCodeBytes;
-		this->opCodeSize = other.opCodeSize;
-		this->packet = other.packet;
-		this->sizeExpected = other.sizeExpected;
-		this->state = other.state;
-	}
-	return *this;
-}
 
 byte* MessageEncoderDecoder::encodeLogin(TFTPPacket* pckt)
 {

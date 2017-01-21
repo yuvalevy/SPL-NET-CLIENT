@@ -45,8 +45,6 @@ public:
 	WritePacket* getWritePacket();
 	string getNextString();
 	void setNextBytes(const byte*,int);
-	ClientState(const ClientState& other);
-	ClientState& operator=(const ClientState& other);
 
 };
 

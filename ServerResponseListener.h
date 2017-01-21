@@ -35,8 +35,6 @@ private:
 
 public:
 	ServerResponseListener(ClientState*, ConnectionHandler*);
-	ServerResponseListener(const ServerResponseListener& other);
-	ServerResponseListener& operator=(const ServerResponseListener& other);
 	void run();
 	~ServerResponseListener();
 };

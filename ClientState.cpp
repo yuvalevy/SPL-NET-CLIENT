@@ -99,24 +99,6 @@ void ClientState::setNextBytes(const byte * byteArray, int size)
 	}
 }
 
-ClientState::ClientState(const ClientState & other) :curState(State::RUTINE), blockNum(other.blockNum), fileName(other.fileName), isConnected(other.isConnected), writePacket(other.writePacket), nextString(other.nextString), stringbytes(other.stringbytes)
-{
-}
-
-ClientState & ClientState::operator=(const ClientState & other)
-{
-	if (this != &other) {
-		this->curState = other.curState;
-		this->blockNum = other.blockNum;
-		this->fileName = other.fileName;
-		this->isConnected = other.isConnected;
-		this->nextString = other.nextString;
-		this->stringbytes = other.stringbytes;
-		this->writePacket = other.writePacket;
-	}
-	return *this;
-}
-
 void ClientState::copy(int startIndex, int endIndex, vector<byte> from, byte* toArray) {
 	int index = 0;
 	for (int i = startIndex; i < endIndex; i++)

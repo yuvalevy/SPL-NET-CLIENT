@@ -15,10 +15,6 @@ CommandLineListener::CommandLineListener(ClientState* state,ConnectionHandler* h
 	validCommands.push_back("DISC");
 }
 
-CommandLineListener::CommandLineListener(const CommandLineListener & other) :clientState(other.clientState), handler(other.handler), encdec(other.encdec), validCommands(other.validCommands)
-{
-}
-
 bool CommandLineListener::validateCommand(string command)
 {
 	size_t index = command.find_first_of(' ');
@@ -206,13 +202,4 @@ bool CommandLineListener::validateString(string param,string paramname)
 	return !isEmpty;
 }
 
-CommandLineListener & CommandLineListener::operator=(const CommandLineListener & other)
-{
-	if (this != &other) {
-		this->clientState = other.clientState;
-		this->encdec = other.encdec;
-		this->handler = other.handler;
-		this->validCommands = other.validCommands;
-	}
-	return *this;
-}
+

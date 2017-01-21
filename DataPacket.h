@@ -19,8 +19,6 @@ public:
 	const char* getData();
 	short getSize();
 	short getBlockNum();
-	DataPacket(const DataPacket& other);
-	DataPacket& operator=(const DataPacket& other);
 	~DataPacket();
 };
 

@@ -31,8 +31,6 @@ public:
 	int getFileSize();
 	byte* getFileToWrite();
 	~WritePacket();
-	WritePacket(const WritePacket& other);
-	WritePacket& operator=(const WritePacket& other);
 };
 
 
