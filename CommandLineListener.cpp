@@ -1,7 +1,7 @@
 #include "CommandLineListener.h"
 
 
-CommandLineListener::CommandLineListener(ClientState* state,ConnectionHandler* hndlr) :clientState(state),handler(hndlr),validCommands(vector<string>())
+CommandLineListener::CommandLineListener(ClientState* state,ConnectionHandler* hndlr) :clientState(state),handler(hndlr),validCommands(vector<string>()),encdec(MessageEncoderDecoder())
 {
 	validCommands.push_back("RRQ");
 	validCommands.push_back("WRQ");
@@ -201,8 +201,6 @@ bool CommandLineListener::validateString(string param,string paramname)
 
 	return !isEmpty;
 }
-
-
 
 CommandLineListener & CommandLineListener::operator=(const CommandLineListener & other)
 {

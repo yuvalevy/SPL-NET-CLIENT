@@ -1,7 +1,7 @@
 #include "MessageEncoderDecoder.h"
 
 
-MessageEncoderDecoder::MessageEncoderDecoder():opCode(-1),packet(vector<byte>()),opCodeBytes(new byte[2]),opCodeSize(0)
+MessageEncoderDecoder::MessageEncoderDecoder():opCode(-1),packet(vector<byte>()),opCodeBytes(new byte[2]),opCodeSize(0),state(),encodedPacketSize(0)
 {
 }
 

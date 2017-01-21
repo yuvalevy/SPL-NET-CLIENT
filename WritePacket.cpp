@@ -2,7 +2,7 @@
 #include <iostream>
 #include <fstream>
 
-WritePacket::WritePacket(string fileName) :TFTPPacket(2), fileName(fileName),blockNum(1)
+WritePacket::WritePacket(string fileName) :TFTPPacket(2), fileName(fileName),blockNum(1),start(0),fileSize(0),fileToWrite()
 {
 	readFile(fileName);
 }
