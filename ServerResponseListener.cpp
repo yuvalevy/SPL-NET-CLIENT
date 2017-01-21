@@ -5,7 +5,7 @@ ServerResponseListener::ServerResponseListener(ClientState * state, ConnectionHa
 {
 }
 
-ServerResponseListener::ServerResponseListener(const ServerResponseListener & other) : handler(other.handler), clientState(), encdec(MessageEncoderDecoder())
+ServerResponseListener::ServerResponseListener(const ServerResponseListener & other) : handler(other.handler), clientState(other.clientState), encdec(other.encdec)
 {
 }
 

@@ -3,7 +3,7 @@
 
 
 
-ErrorPacket::ErrorPacket(short errorCode, string errorMessage):TFTPPacket(5),errorCode(errorCode),errorMessage(errorMessage)
+ErrorPacket::ErrorPacket(short errorCode, string errorMessage) :TFTPPacket(5), errorCode(errorCode), errorMessage(errorMessage)
 {
 }
 

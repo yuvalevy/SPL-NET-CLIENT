@@ -7,7 +7,7 @@ WritePacket::WritePacket(string file) :TFTPPacket(2), fileName(file), fileToWrit
 	readFile(file);
 }
 
-WritePacket::WritePacket(const WritePacket & other) : TFTPPacket(2), fileName(other.fileName), fileToWrite(), start(0), blockNum(1), fileSize(0)
+WritePacket::WritePacket(const WritePacket & other) : TFTPPacket(2), fileName(other.fileName), fileToWrite(other.fileToWrite), start(other.start), blockNum(other.blockNum), fileSize(other.fileSize)
 {
 	readFile(fileName);
 }

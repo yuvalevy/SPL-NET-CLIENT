@@ -99,7 +99,7 @@ void ClientState::setNextBytes(const byte * byteArray, int size)
 	}
 }
 
-ClientState::ClientState(const ClientState & other) :curState(State::RUTINE), blockNum(-1), fileName(string()), isConnected(false), writePacket(nullptr), nextString(vector<byte>()), stringbytes(vector<byte>())
+ClientState::ClientState(const ClientState & other) :curState(State::RUTINE), blockNum(other.blockNum), fileName(other.fileName), isConnected(other.isConnected), writePacket(other.writePacket), nextString(other.nextString), stringbytes(other.stringbytes)
 {
 }
 

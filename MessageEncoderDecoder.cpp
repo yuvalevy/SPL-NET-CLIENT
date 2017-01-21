@@ -173,7 +173,6 @@ byte* MessageEncoderDecoder::encode(TFTPPacket* pckt) {
 	return nullptr;
 }
 
-
 short MessageEncoderDecoder::getPacketSize()
 {
 	return encodedPacketSize;
@@ -201,7 +200,7 @@ MessageEncoderDecoder::~MessageEncoderDecoder()
 {
 }
 
-MessageEncoderDecoder::MessageEncoderDecoder(const MessageEncoderDecoder & other):packet(vector<byte>()), opCodeBytes(new byte[2]), opCodeSize(0),opCode(-1), state(),sizeExpected(0), encodedPacketSize(0)
+MessageEncoderDecoder::MessageEncoderDecoder(const MessageEncoderDecoder & other) :packet(other.packet), opCodeBytes(other.opCodeBytes), opCodeSize(other.opCodeSize), opCode(other.opCode), state(other.state), sizeExpected(other.sizeExpected), encodedPacketSize(other.encodedPacketSize)
 {
 }
 
